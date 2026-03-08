@@ -1,8 +1,4 @@
-const isDev =
-  typeof window !== 'undefined' &&
-  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-
-const API_BASE = isDev ? '/api' : 'https://samtacore.com/api'
+const API_BASE = '/api'
 
 export interface DivineQuote {
   _id?: string

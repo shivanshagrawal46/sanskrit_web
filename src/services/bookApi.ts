@@ -1,8 +1,4 @@
-const isDev =
-  typeof window !== 'undefined' &&
-  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-
-const BASE = isDev ? '/api' : 'https://samtacore.com/api'
+const BASE = '/api'
 
 async function get(path: string) {
   const res = await fetch(`${BASE}${path}`, {

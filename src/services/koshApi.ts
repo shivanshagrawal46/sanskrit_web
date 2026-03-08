@@ -1,7 +1,4 @@
-const isDev =
-  typeof window !== 'undefined' &&
-  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-const KOSH_API_BASE = isDev ? '/api' : 'https://samtacore.com/api'
+const KOSH_API_BASE = '/api'
 
 export interface KoshSubcategory {
   id: number | string
