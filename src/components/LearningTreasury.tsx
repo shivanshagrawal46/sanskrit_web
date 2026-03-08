@@ -87,6 +87,8 @@ const cards = [
   },
 ]
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
 const cardVariants = {
   hidden: { opacity: 0, y: 60, rotateY: 8, scale: 0.92 },
   visible: (i: number) => ({
@@ -97,7 +99,7 @@ const cardVariants = {
     transition: {
       duration: 0.85,
       delay: 0.15 * i,
-      ease: [0.22, 1, 0.36, 1],
+      ease: EASE,
     },
   }),
 }
@@ -111,7 +113,7 @@ export default function LearningTreasury() {
           initial={{ opacity: 0, y: 60, filter: 'blur(6px)' }}
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.85, ease: EASE }}
         >
           <div className="treasury-header-content">
             <p className="treasury-sanskrit sanskrit">विद्या ददाति विनयम्</p>

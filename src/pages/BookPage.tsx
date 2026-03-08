@@ -163,7 +163,12 @@ export default function BookPage({
   const filteredCategories = sortItems(filterItems(categories, searchQuery), sortBy)
   const filteredBooks = sortItems(filterItems(books, searchQuery), sortBy)
   const filteredChapters = sortItems(filterItems(chapters, searchQuery), sortBy)
-  const filteredContent = filterItems(content, searchQuery)
+  const filteredContent = searchQuery
+    ? content.filter((item) => {
+        const t = ((item.title_hn ?? '') + ' ' + (item.title_en ?? '')).toLowerCase()
+        return t.includes(searchQuery.toLowerCase())
+      })
+    : content
 
   const renderContentItem = (item: ChapterItem) => (
     <motion.div

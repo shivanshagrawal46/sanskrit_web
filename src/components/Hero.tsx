@@ -12,11 +12,13 @@ const stats = [
   { value: '150+', label: 'Countries' },
 ]
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
 const fadeSlideUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40, filter: 'blur(6px)' },
   visible: {
     opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.75, delay, ease: EASE },
   },
 })
 
@@ -24,7 +26,7 @@ const imageReveal = {
   hidden: { opacity: 0, scale: 0.75, rotateY: -15 },
   visible: {
     opacity: 1, scale: 1, rotateY: 0,
-    transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.3 },
+    transition: { duration: 1.1, ease: EASE, delay: 0.3 },
   },
 }
 
