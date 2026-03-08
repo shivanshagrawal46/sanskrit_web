@@ -1,0 +1,105 @@
+.community {
+  padding: 64px 24px 80px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+}
+
+.community-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  perspective: 1000px;
+}
+
+.community-heading {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.community-subtitle {
+  font-size: 1.05rem;
+  color: var(--grey);
+  margin: 0 auto 40px;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.community-row {
+  margin-top: 0;
+}
+
+.community-visual-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community-img {
+  max-width: 100%;
+  width: min(320px, 90vw);
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+}
+
+.community-img:hover {
+  transform: translateY(-4px) rotateY(-3deg) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.community-content-col {
+  text-align: center;
+}
+
+.community-sanskrit {
+  font-size: 1.15rem;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+.community-desc {
+  font-size: 1rem;
+  color: var(--grey);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .community {
+    padding: 80px 48px 100px;
+  }
+
+  .community-row {
+    text-align: left;
+  }
+
+  .community-content-col {
+    text-align: left;
+  }
+
+  .community-desc {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .community-img {
+    width: 100%;
+    max-width: 380px;
+  }
+}

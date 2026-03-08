@@ -1,0 +1,66 @@
+/* SanskritVidya – Ancient & Aesthetic Theme */
+:root {
+  --cream: #f8f8f4;
+  --cream-dark: #f0efe8;
+  --teal: #0d7377;
+  --teal-light: #14a3a8;
+  --gold: #c9a227;
+  --gold-light: #e0b75a;
+  --gold-pill: #d4af37;
+  --charcoal: #2c2c2c;
+  --grey: #555555;
+  --white: #ffffff;
+  --saffron: #e07c24;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px; /* prevents zoom on focus on iOS */
+  }
+}
+
+#root {
+  height: 100%;
+}
+
+.sanskrit {
+  font-family: var(--font-devanagari);
+}
+
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Subtle peacock / mandala background pattern */
+.hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(13, 115, 119, 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 85% 70%, rgba(201, 162, 39, 0.06) 0%, transparent 35%);
+  pointer-events: none;
+}

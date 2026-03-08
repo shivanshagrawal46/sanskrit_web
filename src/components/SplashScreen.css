@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;500&display=swap');
+
+.sp {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #faf9f5;
+  overflow: hidden;
+}
+
+/* ── decorative background ring ── */
+.sp-ring {
+  position: absolute;
+  width: min(520px, 85vw);
+  height: min(520px, 85vw);
+  border-radius: 50%;
+  border: 0.5px solid rgba(201, 162, 39, 0.2);
+  pointer-events: none;
+}
+
+/* ── logo ── */
+.sp-logo {
+  width: clamp(100px, 16vw, 140px);
+  height: auto;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ── title ── */
+.sp-title {
+  display: flex;
+  align-items: baseline;
+  line-height: 1.1;
+}
+
+.sp-mask {
+  overflow: hidden;
+}
+
+.sp-g {
+  display: block;
+  font-family: 'Eczar', 'Noto Serif Devanagari', serif;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 9vw, 5.4rem);
+  color: #1a2536;
+}
+
+.sp-gap {
+  width: 0.28em;
+  display: inline-block;
+  font-size: clamp(2.8rem, 9vw, 5.4rem);
+}
+
+/* ── gold accent line ── */
+.sp-accent {
+  width: min(200px, 45vw);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #c9a227, transparent);
+  transform-origin: center;
+}
+
+/* ── subtitle ── */
+.sp-sub {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(0.78rem, 2vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: #999;
+  text-transform: uppercase;
+}

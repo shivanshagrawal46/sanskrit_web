@@ -1,0 +1,184 @@
+/* AppDownloadSection – minimal & elegant */
+
+.ads {
+  padding: 96px 24px 112px;
+  background: var(--cream);
+}
+
+.ads-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ── Header ─────────────────────────────────── */
+.ads-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.ads-eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.ads-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--charcoal);
+  margin: 0;
+  line-height: 1.25;
+}
+.ads-line {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+/* ── Row (two cards side-by-side) ───────────── */
+.ads-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* ── Card ────────────────────────────────────── */
+.ads-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 32px 40px;
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.ads-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Phone ───────────────────────────────────── */
+.ads-phone {
+  width: 140px;
+  height: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #111;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.04);
+  margin-bottom: 28px;
+  position: relative;
+}
+.ads-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Accent ring behind phone on hover */
+.ads-card--teal .ads-phone {
+  border-color: rgba(13, 115, 119, 0.15);
+}
+.ads-card--gold .ads-phone {
+  border-color: rgba(201, 162, 39, 0.15);
+}
+.ads-card--teal:hover .ads-phone {
+  box-shadow:
+    0 20px 48px rgba(13, 115, 119, 0.12),
+    0 0 0 3px rgba(13, 115, 119, 0.1);
+}
+.ads-card--gold:hover .ads-phone {
+  box-shadow:
+    0 20px 48px rgba(201, 162, 39, 0.12),
+    0 0 0 3px rgba(201, 162, 39, 0.1);
+}
+
+/* ── Info ────────────────────────────────────── */
+.ads-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ads-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 0 0 2px;
+  font-family: var(--font-display);
+}
+.ads-sanskrit {
+  font-size: 0.88rem;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+.ads-desc {
+  font-size: 0.88rem;
+  color: var(--grey);
+  line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 300px;
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.ads-btns {
+  display: flex;
+  gap: 10px;
+}
+.ads-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ads-btn:hover {
+  transform: translateY(-2px);
+}
+.ads-btn--teal {
+  background: var(--teal);
+  color: white;
+  box-shadow: 0 4px 16px rgba(13, 115, 119, 0.25);
+}
+.ads-btn--teal:hover {
+  box-shadow: 0 8px 24px rgba(13, 115, 119, 0.35);
+}
+.ads-btn--gold {
+  background: var(--gold);
+  color: white;
+  box-shadow: 0 4px 16px rgba(201, 162, 39, 0.25);
+}
+.ads-btn--gold:hover {
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.35);
+}
+.ads-btn--ghost {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+}
+.ads-btn--ghost:hover {
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 700px) {
+  .ads-row {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .ads-card { padding: 36px 24px 32px; }
+  .ads-phone { width: 120px; height: 240px; }
+}

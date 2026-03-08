@@ -1,0 +1,199 @@
+.treasury {
+  padding: 64px 24px 80px;
+  background: var(--cream);
+}
+
+.treasury-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.treasury-sanskrit {
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+.treasury-heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 0 0 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.treasury-subtitle {
+  font-size: 1.05rem;
+  color: var(--grey);
+  max-width: 640px;
+  margin: 0 auto 0;
+  line-height: 1.6;
+}
+
+.treasury-header-with-guru {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.treasury-header-content {
+  text-align: center;
+}
+
+.treasury-little-guru {
+  flex-shrink: 0;
+}
+
+.treasury-little-guru .little-guru-img {
+  width: min(160px, 40vw);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .treasury {
+    padding: 80px 48px 100px;
+  }
+
+  .treasury-header-with-guru {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .treasury-header-content {
+    text-align: left;
+    flex: 1;
+    max-width: 560px;
+  }
+
+  .treasury-subtitle {
+    margin: 0;
+  }
+
+  .treasury-little-guru .little-guru-img {
+    width: 180px;
+  }
+
+  .treasury-cards {
+    text-align: left;
+  }
+}
+
+.treasury-cards {
+  margin-top: 0;
+}
+
+.treasury-card-3d-wrapper {
+  perspective: 900px;
+  height: 100%;
+}
+
+.treasury-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.treasury-card {
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.treasury-card::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.08;
+  top: -40px;
+  right: -40px;
+  pointer-events: none;
+}
+
+.treasury-card-teal::before {
+  background: var(--teal);
+}
+
+.treasury-card-gold::before {
+  background: var(--gold);
+}
+
+.treasury-card:hover {
+  transform: translateY(-8px) rotateX(-2deg) rotateY(3deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.treasury-card .ant-card-body {
+  padding: 28px 24px;
+  text-align: left;
+}
+
+.treasury-card-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: var(--cream-dark);
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.treasury-card:hover .treasury-card-image {
+  transform: scale(1.08);
+}
+
+.treasury-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.treasury-card-sanskrit {
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+
+.treasury-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+  font-family: var(--font-body);
+}
+
+.treasury-card-desc {
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .treasury-card .ant-card-body {
+    padding: 24px 20px;
+  }
+
+  .treasury-card-title {
+    font-size: 1rem;
+  }
+}
