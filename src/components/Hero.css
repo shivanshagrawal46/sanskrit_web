@@ -14,20 +14,22 @@
   width: 100%;
 }
 
-.hero-row {
+/* ── Layout: CSS grid with named areas ──────── */
+.hero-layout {
+  display: grid;
+  grid-template-columns: 14fr 10fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "intro  visual"
+    "main   visual";
+  gap: 0 56px;
+  align-items: center;
   margin-bottom: 32px;
 }
 
-.hero-content-col {
-  order: 1;
-}
-
-.hero-visual-col {
-  order: 0;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-}
+.hero-intro  { grid-area: intro;  align-self: end;   padding-bottom: 16px; }
+.hero-visual { grid-area: visual; align-self: center; }
+.hero-main   { grid-area: main;   align-self: start; }
 
 .tagline-pill {
   display: inline-flex;
@@ -156,7 +158,13 @@
 }
 
 .hero-stats {
+  display: flex;
+  gap: 32px;
   margin-top: 0;
+}
+
+.hero-stat {
+  min-width: 0;
 }
 
 .stat-value {
@@ -179,6 +187,7 @@
   justify-content: center;
   align-items: center;
   perspective: 800px;
+  grid-area: visual;
 }
 
 .hero-glow {
@@ -258,95 +267,108 @@
   .hero {
     min-height: calc(100dvh - 70px);
     min-height: calc(100vh - 70px);
-    padding: 0 24px 16px;
-    justify-content: flex-start;
+    padding: 28px 24px 32px;
+    align-items: flex-start;
   }
 
-  .hero-inner {
+  /* Stack as flex column: intro → image → main */
+  .hero-layout {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    justify-content: space-between;
+    gap: 0;
+    margin-bottom: 16px;
   }
 
-  .hero-row {
-    margin-bottom: 8px;
-    flex: 1;
-    min-height: 0;
+  .hero-intro {
+    order: 1;
+    align-self: stretch;
+    padding-bottom: 0;
+    text-align: left;
+    margin-bottom: 20px;
   }
 
-  .hero-row .ant-col {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+  .hero-visual {
+    order: 2;
+    align-self: stretch;
+    justify-content: center;
+    margin-bottom: 24px;
   }
 
-  .hero-visual-col {
-    margin-bottom: 8px;
+  .hero-main {
+    order: 3;
+    align-self: stretch;
+    text-align: left;
   }
 
   .hero-krishna-img {
-    width: min(180px, 45vw);
+    width: min(180px, 48vw);
+  }
+
+  .hero-dots-teal {
+    width: 44px;
+    height: 44px;
+    top: 8%;
+    right: calc(50% - 110px);
+  }
+
+  .hero-dots-gold {
+    width: 36px;
+    height: 36px;
+    bottom: 8%;
+    left: calc(50% - 100px);
   }
 
   .tagline-pill {
-    margin-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    display: inline-flex;
   }
 
   .hero-sanskrit {
-    margin: 0 0 8px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    margin: 0;
   }
 
   .hero-heading {
-    font-size: clamp(1.5rem, 5vw, 1.9rem);
-    margin: 0 0 8px;
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    margin: 0 0 16px;
   }
 
   .hero-desc {
-    margin: 0 0 12px;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    margin: 0 0 20px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 100%;
   }
 
   .hero-ctas {
     flex-direction: column;
-    margin-bottom: 12px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 10px;
   }
 
-  .hero-ctas .ant-btn {
+  .btn-primary-hero,
+  .btn-secondary-hero {
     width: 100%;
     justify-content: center;
-    min-height: 44px !important;
   }
 
-  .hero-stats .stat-value {
-    font-size: 1.25rem;
+  .hero-stats {
+    justify-content: center;
+    gap: 28px;
   }
 
-  .hero-stats .stat-label {
-    font-size: 0.7rem;
-  }
+  .hero-stats .stat-value { font-size: 1.35rem; }
+  .hero-stats .stat-label { font-size: 0.75rem; }
 
-  .hero-explore {
-    margin-top: 8px;
-    flex-shrink: 0;
-  }
+  .hero-explore { margin-top: 16px; }
 }
 
 /* ── Desktop ── */
 @media (min-width: 992px) {
   .hero {
     padding: 64px 48px 80px;
-  }
-
-  .hero-content-col {
-    order: 0;
-  }
-
-  .hero-visual-col {
-    order: 1;
-    margin-bottom: 0;
-    justify-content: flex-end;
   }
 
   .hero-krishna-img {
